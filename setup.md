@@ -5,20 +5,9 @@ permalink: /setup/
 root: ..
 ---
 
-### Obtain lesson materials
-
-1. Download [python-novice-inflammation-data.zip][zipfile1]
-        and [python-novice-inflammation-code.zip][zipfile2].
-2. Create a folder called `swc-python` on your Desktop.
-3. Move downloaded files into this newly created folder.
-4. Unzip the files.
-
-You should now see two new folders called `data` and `code` in your `swc-python` directory on your
-Desktop.
-
 ## Installing Python
 
-In this lesson, we will be using Python 3 with some of its most popular scientific libraries.
+In this lesson, we will be using Python 3.
 Although one can install a plain-vanilla Python and all required libraries by hand,
 we recommend installing [Anaconda][anaconda-website],
 a Python distribution that comes with everything we need for the lesson.
@@ -50,40 +39,14 @@ If you installed Anaconda, you can launch a notebook in two ways:
 {{ page.root }}{% link fig/anaconda-navigator-notebook-launch.png %})
 > Anaconda will open a new browser window or tab with a Notebook Dashboard showing you the
 > contents of your Home (or User) folder.
-> 3. Navigate to the `data` directory by clicking on the directory names leading to it:
-> `Desktop`, `swc-python`, then `data`:
-> ![Anaconda Navigator Notebook directory](
-{{ page.root }}{% link fig/jupyter-notebook-data-directory.png %})
-> 4. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
+> 3. Launch the notebook by clicking on the "New" button and then selecting "Python 3":
 > ![Anaconda Navigator Notebook directory](
 {{ page.root }}{% link fig/jupyter-notebook-launch-notebook.png %})
 {: .solution}
 
 > ## Command line (Terminal)
 >
-> 1\. Navigate to the `data` directory:
->
-> > ## Unix shell
-> > If you're using a Unix shell application, such as Terminal app in macOS, Console or Terminal
-> > in Linux, or [Git Bash][gitbash] on Windows, execute the following command:
-> > ~~~
-> > cd ~/Desktop/swc-python/data
-> > ~~~
-> > {: .language-bash}
-> {: .solution}
->
-> > ## Command Prompt (Windows)
-> > On Windows, you can use its native Command Prompt program.  The easiest way to start it up is
-> > pressing <kbd>Windows Logo Key</kbd>+<kbd>R</kbd>, entering `cmd`, and hitting
-> > <kbd>Return</kbd>. In the Command Prompt, use the following command to navigate to
-> > the `data` folder:
-> > ~~~
-> > cd /D %userprofile%\Desktop\swc-python\data
-> > ~~~
-> > {: .source}
-> {: .solution}
->
-> 2\. Start Jupyter server
+> 1\. Start Jupyter server
 >
 > > ## Unix shell
 > > ~~~
@@ -99,7 +62,7 @@ If you installed Anaconda, you can launch a notebook in two ways:
 > > {: .source}
 > {: .solution}
 >
-> 3\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
+> 2\. Launch the notebook by clicking on the "New" button on the right and selecting "Python 3"
 > from the drop-down menu:
 > ![Anaconda Navigator Notebook directory](
 {{ page.root }}{% link fig/jupyter-notebook-launch-notebook2.png %})
@@ -140,7 +103,6 @@ winpty python
 [anaconda-instructions]: https://carpentries.github.io/workshop-template/#python
 [anaconda-website]: https://www.anaconda.com/
 [gitbash]: https://gitforwindows.org
-[zipfile1]: {{ page.root }}/data/python-novice-inflammation-data.zip
-[zipfile2]: {{ page.root }}/code/python-novice-inflammation-code.zip
+
 
 
