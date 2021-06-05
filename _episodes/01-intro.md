@@ -13,6 +13,7 @@ keypoints:
 - "Generally, Python implementations are **interpreted** rather than **compiled**"
 - "It is particularly useful at analysing data"
 - "The ipython interpreter can use tab completion and keeps a history of the commands you run"
+- "In Jupyter, you write your Python code in 'cells' which you can then run to see the output"
 - "Use `Ctrl-D` to exist an IPython session"
 - "Python code is case sensitive"
 ---
@@ -35,49 +36,70 @@ allows the language to be very dynamic but does have the drawback of being slowe
 However, there are many ways Python has of overcoming these drawbacks and you will almost certainly
 never notice a problem!
 
-## Getting Started - Jupyter Notebook
+## Getting Started
 
-You should be able to start up a Jupyter Notebook from the Anaconda interface. From here you can
-create a new Python 3 notebook and use the cells to input your python code.
-
-## Getting Started - IPython
-
-The IPython interpreter acts like the Shell but
-for Python commands. In other words, when you type your instructions at the prompt and press
-enter, it will be run straight away.
-
-Python is run just like any other program from a shell prompt - by typing it's name.
-If you haven't already, you can start up the intrepreter by typing the following:
-~~~
-$ ipython
-~~~
-{: .language-shell}
-~~~
-Python 3.6.5 |Anaconda, Inc.| (default, Apr 26 2018, 08:42:37) 
-Type 'copyright', 'credits' or 'license' for more information
-IPython 6.4.0 -- An enhanced Interactive Python. Type '?' for help.
-
-In [1]: 
-~~~
-{: .output}
-
-Note that the output will vary depending on your computer and how you've got Python installed.
-
-> ## Python vs. IPython
+> ## Jupyter Notebook
 >
-> You may be wondering why you type `ipython` to run the Python interpreter rather than just
-> `python`. This does also work but this is a much more basic interpreter than IPython that
-> doesn't have tab completion, syntax highlighting, etc. If you ever need an interactive
-> Python prompt, IPython is the best option!
-{: .callout}
+> The "[Setup](setup/)" section covers the instructions about how to start Jupyter and create a
+> Python 3 notebook. After doing this, you should be presented with a screen similar to this:
+> ![Initial Jupyter Notebook](
+{{ page.root }}{% link fig/jupyter-start-up.png %})
+> 
+> A jupyter notebook is built up of 'cells' - one is created by default to start with. These
+> cells are where you write code (indicated by the `In` prompt) or Markdown text if the cell
+> type is changed using the dropdown on the menu bar (currently 'code' is selected).
+> 
+> You can add cells using the '+' button or the menus. To run code in a cell, you can use the 
+> 'Run' button or hold down shift and press the 'Enter' key. Output is displayed underneath.
+> 
+> Jupyter notebooks can do an awful lot more and you're welcome to explore them in more detail
+> but this should get you started!
+{: .solution}
 
-To quit out, you can do one of the following:
+> ## IPython
+>
+> The IPython interpreter acts like the Shell but
+> for Python commands. In other words, when you type your instructions at the prompt and press
+> enter, it will be run straight away.
+>
+> Python is run just like any other program from a shell prompt - by typing it's name.
+> If you haven't already, you can start up the intrepreter by typing the following:
+>
+> ~~~
+> $ ipython
+> ~~~
+> {: .language-shell}
+> ~~~
+> Python 3.6.5 |Anaconda, Inc.| (default, Apr 26 2018, 08:42:37) 
+> Type 'copyright', 'credits' or 'license' for more information
+> IPython 6.4.0 -- An enhanced Interactive Python. Type '?' for help.
+> 
+> In [1]: 
+> ~~~
+> {: .output}
+> 
+> Note that the output will vary depending on your computer and how you've got Python installed.
+> 
+> 
+> > ## Python vs. IPython
+> >
+> > You may be wondering why you type `ipython` to run the Python interpreter rather than just
+> > `python`. This does also work but this is a much more basic interpreter than IPython that
+> > doesn't have tab completion, syntax highlighting, etc. If you ever need an interactive
+> > Python prompt, IPython is the best option!
+> {: .callout}
+> 
+> To quit out, you can do one of the following:
+> 
+> * Use `Ctrl-D` - it will ask for confirmation if you want to quit
+> * type the command `exit`
+> * type the command `quit`
+> 
+> This will then drop you back to the shell prompt you were at before.
+> 
+> 
+{: .solution}
 
-* Use `Ctrl-D` - it will ask for confirmation if you want to quit
-* type the command `exit`
-* type the command `quit`
-
-This will then drop you back to the shell prompt you were at before.
 
 ## Getting Python to do something
 
@@ -126,9 +148,11 @@ print(...)
 {: .output}
 
 If in IPython, You can press `q` to quit out of the editor this opened in (`less` if you're interested!).
+In addition, IPython also has shell-like behaviour in that you can use the up arrow to go to previous commands
+that you've run. In Jupyter, you obviously don't need that functionality as you can just go back to previous
+cells, edit them and re-run the cells.
 
-IPython also has shell-like behaviour in that you can use the up arrow to go to previous commands 
-and `Tab` to auto-complete a function or variable name:
+In either IPython or Jupyter, you can also press `Tab` to auto-complete a function or variable name:
 
 ~~~
 pri [Tab]

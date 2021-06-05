@@ -87,6 +87,49 @@ first and last: 1 7
 ~~~
 {: .output}
 
+
+Lists in Python can contain any object type and different object types with the same list, for example:
+~~~
+sample_ages = [10, 12.5, 'Unknown']
+~~~
+{: .language-python}
+
+Due to this, python lists can even contain other lists. For example, we could 
+represent the products in the shelves of a small grocery shop:
+~~~
+x = [['pepper', 'zucchini', 'onion'],
+     ['cabbage', 'lettuce', 'garlic'],
+     ['apple', 'pear', 'banana']]
+~~~
+{: .language-python}
+
+This is a list containing 3 other lists, each of those containing some strings.
+You can use the square brackets (`[]`) to access each of the **nested** lists, e.g.
+
+~~~
+print(x[1])
+~~~
+{: .language-python}
+
+~~~
+['cabbage', 'lettuce', 'garlic']
+~~~
+{: .output}
+
+You can use another set of square brackets to access elements in this nested list, a string in this case:
+~~~
+print(x[1][2])
+~~~
+{: .language-python}
+
+~~~
+'banana'
+~~~
+{: .output}
+
+You can obviously keep this going to 3, 4 or even more levels of lists but be aware that it can start to 
+get confusing!
+
 You may have noticed there is a significant similarity between lists and strings and
 in fact a lot of the things you can do with strings you can also do with lists. However, 
 there is one important difference between the two: we can change the values in a list,
@@ -143,90 +186,13 @@ does not.
 >
 {: .callout}
 
-> ## Nested Lists
-> Since lists can contain any Python variable, it can even contain other lists.
->
-> For example, we could represent the products in the shelves of a small grocery shop:
->
-> ~~~
-> x = [['pepper', 'zucchini', 'onion'],
->      ['cabbage', 'lettuce', 'garlic'],
->      ['apple', 'pear', 'banana']]
-> ~~~
-> {: .language-python}
->
-> Here is a visual example of how indexing a list of lists `x` works:
->
-> [![The first element of a list.
-> Adapted from @hadleywickham.](../fig/indexing_lists_python.png)][hadleywickham-tweet]
->
-> Using the previously declared list `x`, these would be the results of the
-> index operations shown in the image:
->
-> ~~~
-> print([x[0]])
-> ~~~
-> {: .language-python}
->
-> ~~~
-> [['pepper', 'zucchini', 'onion']]
-> ~~~
-> {: .output}
->
-> ~~~
-> print(x[0])
-> ~~~
-> {: .language-python}
->
-> ~~~
-> ['pepper', 'zucchini', 'onion']
-> ~~~
-> {: .output}
->
-> ~~~
-> print(x[0][0])
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 'pepper'
-> ~~~
-> {: .output}
->
-> Thanks to [Hadley Wickham][hadleywickham-tweet]
-> for the image above.
-{: .callout}
 
-> ## Heterogeneous Lists
-> Lists in Python can contain elements of different types. Example:
-> ~~~
-> sample_ages = [10, 12.5, 'Unknown']
-> ~~~
-{: .callout}
+### Manipulating Lists
 
-> ## Calling Functions on Objects
-> 
-> The `list`, `dict` and `string` types are actually more complicated objects than basic numbers
-> and therefore have certain built-in bits of code that you can run on them. This is done through
-> a [function call]({{ page.root }}/reference/#function-call). For example:
-> 
-> ~~~
-> my_str.find("a")
-> ~~~
-> {: .language-python}
->
-> This code asks Python to run the [function]({{ page.root }}/reference/#function) `find` **on**
-> the object pointed at by the variable `my_str`. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
-> is used everywhere in Python: the thing that appears before the dot contains the thing that
-> appears after.
-> `find` has one [parameter]({{ page.root }}/reference/#parameter): the sub-string to look 
-> for in the string
-> This is sent to the code referened by the `find` name (the **function**) and after this code
-> is run, it return the index of the sub-string (if found) and then continues. You can also have
-> functions that don't need any input, for example `my_str.split()`.
-{: .callout}
-
-There are many ways to change the contents of lists besides assigning new values to individual elements:
+There are many ways to change the contents of lists besides assigning new values to individual elements.
+These generally involve using the additional functions provided by the `list` type. To call these
+functions, use the `.` operator and give the function name with the arguments in brackets afterwards.
+For example:
 
 ~~~
 odds.append(11)
@@ -240,13 +206,13 @@ odds after adding a value: [1, 3, 5, 7, 11]
 {: .output}
 
 ~~~
-del odds[0]
-print('odds after removing the first element:', odds)
+odds.remove(1)
+print('odds after removing the element equal to 1:', odds)
 ~~~
 {: .language-python}
 
 ~~~
-odds after removing the first element: [3, 5, 7, 11]
+odds after removing the element equal to 1: [3, 5, 7, 11]
 ~~~
 {: .output}
 
@@ -305,6 +271,28 @@ This is different from how variables worked in lesson 2 when you were storing (i
 numbers and strings. By default, Python will apply another variable name to the same object
 rather than copying it if it's not one of the basic immutable types.
 
+> ## Calling Functions on Objects
+> 
+> The `list`, `dict` and `string` types are actually more complicated objects than basic numbers
+> and therefore have certain built-in bits of code that you can run on them. This is done through
+> a [function call]({{ page.root }}/reference/#function-call). For example:
+> 
+> ~~~
+> my_str.find("a")
+> ~~~
+> {: .language-python}
+>
+> This code asks Python to run the [function]({{ page.root }}/reference/#function) `find` **on**
+> the object pointed at by the variable `my_str`. This [dotted notation]({{ page.root }}/reference/#dotted-notation)
+> is used everywhere in Python: the thing that appears before the dot contains the thing that
+> appears after.
+> `find` has one [parameter]({{ page.root }}/reference/#parameter): the sub-string to look 
+> for in the string
+> This is sent to the code referened by the `find` name (the **function**) and after this code
+> is run, it return the index of the sub-string (if found) and then continues. You can also have
+> functions that don't need any input, for example `my_str.split()`.
+{: .callout}
+
 ### Slicing Lists
 
 Subsets of lists and strings can be accessed by specifying ranges of values in the square
@@ -318,21 +306,12 @@ print("group:", group)
 
 species = binomial_name[11:24]
 print("species:", species)
-
-chromosomes = ["X", "Y", "2", "3", "4"]
-autosomes = chromosomes[2:5]
-print("autosomes:", autosomes)
-
-last = chromosomes[-1]
-print("last:", last)
 ~~~
 {: .language-python}
 
 ~~~
 group: Drosophila
 species: melanogaster
-autosomes: ["2", "3", "4"]
-last: 4
 ~~~
 {: .output}
 
@@ -405,113 +384,6 @@ print(info_dict)
 ~~~
 {: .output}
 
-
-> ## Slicing From the End
->
-> Use slicing to access only the last four characters of a string or entries of a list.
->
-> ~~~
-> string_for_slicing = "Observation date: 02-Feb-2013"
-> list_for_slicing = [["fluorine", "F"], ["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
-> ~~~
-> {: .language-python}
->
-> ~~~
-> "2013"
-> [["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
-> ~~~
-> {: .output}
->
-> Would your solution work regardless of whether you knew beforehand
-> the length of the string or list
-> (e.g. if you wanted to apply the solution to a set of lists of different lengths)?
-> If not, try to change your approach to make it more robust.
->
-> > ## Solution
-> > Use negative indices to count elements from the end of a container (such as list or string):
-> >
-> > ~~~
-> > string_for_slicing[-4:]
-> > list_for_slicing[-4:]
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
-
-> ## Non-Continuous Slices
->
-> So far we've seen how to use slicing to take single blocks
-> of successive entries from a sequence.
-> But what if we want to take a subset of entries
-> that aren't next to each other in the sequence?
->
-> You can achieve this by providing a third argument
-> to the range within the brackets, called the _step size_.
-> The example below shows how you can take every third entry in a list:
->
-> ~~~
-> primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
-> subset = primes[0:12:3]
-> print("subset", subset)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> subset [2, 7, 17, 29]
-> ~~~
-> {: .output}
->
-> Notice that the slice taken begins with the first entry in the range,
-> followed by entries taken at equally-spaced intervals (the steps) thereafter.
-> If you wanted to begin the subset with the third entry,
-> you would need to specify that as the starting point of the sliced range:
->
-> ~~~
-> primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
-> subset = primes[2:12:3]
-> print("subset", subset)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> subset [5, 13, 23, 37]
-> ~~~
-> {: .output}
->
-> Use the step size argument to create a new string
-> that contains only every other character in the string
-> "In an octopus's garden in the shade"
->
-> ~~~
-> beatles = "In an octopus's garden in the shade"
-> ~~~
-> {: .language-python}
->
-> ~~~
-> I notpssgre ntesae
-> ~~~
-> {: .output}
->
-> > ## Solution
-> > To obtain every other character you need to provide a slice with the step
-> > size of 2:
-> >
-> > ~~~
-> > beatles[0:35:2]
-> > ~~~
-> > {: .language-python}
-> >
-> > You can also leave out the beginning and end of the slice to take the whole string
-> > and provide only the step argument to go every second
-> > element:
-> >
-> > ~~~
-> > beatles[::2]
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
-
 > ## Overloading
 >
 > `+` usually means addition, but when used on strings or lists, it means "concatenate".
@@ -552,6 +424,39 @@ print(info_dict)
 > > {: .language-python}
 > {: .solution}
 {: .challenge}
-[hadleywickham-tweet]: https://twitter.com/hadleywickham/status/643381054758363136
+
+
+> ## Slicing From the End
+>
+> Use slicing to access only the last four characters of a string or entries of a list.
+>
+> ~~~
+> string_for_slicing = "Observation date: 02-Feb-2013"
+> list_for_slicing = [["fluorine", "F"], ["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
+> ~~~
+> {: .language-python}
+>
+> ~~~
+> "2013"
+> [["chlorine", "Cl"], ["bromine", "Br"], ["iodine", "I"], ["astatine", "At"]]
+> ~~~
+> {: .output}
+>
+> Would your solution work regardless of whether you knew beforehand
+> the length of the string or list
+> (e.g. if you wanted to apply the solution to a set of lists of different lengths)?
+> If not, try to change your approach to make it more robust.
+>
+> > ## Solution
+> > Use negative indices to count elements from the end of a container (such as list or string):
+> >
+> > ~~~
+> > string_for_slicing[-4:]
+> > list_for_slicing[-4:]
+> > ~~~
+> > {: .language-python}
+> {: .solution}
+{: .challenge}
+
 
 {% include links.md %}

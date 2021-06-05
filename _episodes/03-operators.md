@@ -108,18 +108,6 @@ third = my_str[2]
 > {: .solution}
 {: .challenge}
 
-
-> ## Using operators in Python
-> 
-> Now you know how operators work, try to do the following:
-> 1. Create two variables, one a float and the other an integer
-> 2. Print the product of these
-> 3. What happens when you divide a float and an int?
-> 4. What happens when you divide two ints?
-> 5. Create a string variable and output various letters from it
-{: .challenge}
-
-
 > ## In-place Operators
 > 
 > What is the value of `a` and `b` after the following code is executed? Try it by running this code yourself
@@ -138,4 +126,12 @@ third = my_str[2]
 > > The addition and assignment operator (`b += a`) is shorthand for `b = b + a` so in this case, the
 > > value of `a` is added to `b` but `a` is left unchanged.
 > {: .solution}
+{: .challenge}
+
+> ## Getting Experience with Operators
+> 
+> If you have time, see what happens when you:
+> 1. Multiply a float and an integer
+> 2. Divide a float and an integer
+> 3. Divide two integer
 {: .challenge}
