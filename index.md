@@ -22,5 +22,4 @@ make it as easily understandable as possible.
 {: .prereq}
 
 ### Getting Started
-To get started, follow the directions on the "[Setup](setup/)" page to download data
-and install a Python interpreter.
+To get started, follow the directions on the "[Setup](setup/)" page to install a Python interpreter.

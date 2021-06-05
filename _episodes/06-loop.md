@@ -311,9 +311,12 @@ so we should always use it when we can.
 > ## Count Occurances of Letters in a String
 > 
 > Count the number of occurances of each letter in a string. Use a dictionary to store the
-> number of times each letter comes up and the loop variable as the key to that dictionary.
-> You will need to check if the letter has been encountered before, i.e. is it `in` the dictionary?
-> and if not, create it.
+> number of times each letter,
+> e.g. `letter_freq['a']` gives the number of times the letter `'a'` occurs.
+> Use a loop over each character in the string and then the loop variable as the key.
+> If the key (the current letter) hasn't been encountered before, (e.g. `if not 'a' in letter_freq`)
+> then you'll need to initialise that key of the dictionary to zero. If it has, simply add one to the
+> current total.
 > 
 > > ## Solution
 > > ~~~
@@ -329,33 +332,6 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-> ## Computing Powers With Loops
->
-> Exponentiation is built into Python:
->
-> ~~~
-> print(5 ** 3)
-> ~~~
-> {: .language-python}
->
-> ~~~
-> 125
-> ~~~
-> {: .output}
->
-> Write a loop that calculates the same result as `5 ** 3` using
-> multiplication (and without exponentiation).
->
-> > ## Solution
-> > ~~~
-> > result = 1
-> > for i in range(0, 3):
-> >    result = result * 5
-> > print(result)
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
 
 > ## Reverse a String
 >
@@ -376,48 +352,5 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-> ## Computing the Value of a Polynomial
->
-> The built-in function `enumerate` takes a sequence (e.g. a list) and generates a
-> new sequence of the same length. Each element of the new sequence is a pair composed of the index
-> (0, 1, 2,...) and the value from the original sequence:
->
-> ~~~
-> for i, x in enumerate(xs):
->     # Do something with i and x
-> ~~~
-> {: .language-python}
->
-> The code above loops through `xs`, assigning the index to `i` and the value to `x`.
->
-> Suppose you have encoded a polynomial as a list of coefficients in
-> the following way: the first element is the constant term, the
-> second element is the coefficient of the linear term, the third is the
-> coefficient of the quadratic term, etc.
->
-> ~~~
-> x = 5
-> cc = [2, 4, 3]
-> ~~~
-> {: .language-python}
->
-> ~~~
-> y = cc[0] * x**0 + cc[1] * x**1 + cc[2] * x**2
-> y = 97
-> ~~~
-> {: .output}
->
-> Write a loop using `enumerate(cc)` which computes the value `y` of any
-> polynomial, given `x` and `cc`.
->
-> > ## Solution
-> > ~~~
-> > y = 0
-> > for i, c in enumerate(cc):
-> >     y = y + x**i * c
-> > ~~~
-> > {: .language-python}
-> {: .solution}
-{: .challenge}
 
 {% include links.md %}
