@@ -15,7 +15,7 @@ keypoints:
 - "Use `len(thing)` to determine the length of something that contains other values."
 ---
 
-It is very good coding practise to reuse as much code as posible as generally, the fewer lines
+It is very good coding practise to reuse as much code as possible as generally, the fewer lines
 of code there are, the fewer bugs you'll have. Loops are a very good way of doing this where
 a block of code is repeated a number of times or on each element in a collection.
 An example task that we might want to repeat is printing each character in a
@@ -260,7 +260,7 @@ so we should always use it when we can.
 >   For example, `range(2, 5)` produces `2, 3, 4`.
 > * If `range` is given 3 parameters,
 >   it starts at the first one, ends just before the second one, and increments by the third one.
->   For exmaple `range(3, 10, 2)` produces `3, 5, 7, 9`.
+>   For example `range(3, 10, 2)` produces `3, 5, 7, 9`.
 >
 > Using `range`,
 > write a loop that uses `range` to print the first 3 natural numbers:
@@ -308,9 +308,9 @@ so we should always use it when we can.
 > {: .solution}
 {: .challenge}
 
-> ## Count Occurances of Letters in a String
+> ## Count Occurrences of Letters in a String
 > 
-> Count the number of occurances of each letter in a string. Use a dictionary to store the
+> Count the number of occurrences of each letter in a string. Use a dictionary to store the
 > number of times each letter,
 > e.g. `letter_freq['a']` gives the number of times the letter `'a'` occurs.
 > Use a loop over each character in the string and then the loop variable as the key.

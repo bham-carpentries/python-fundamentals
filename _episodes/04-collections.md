@@ -288,7 +288,7 @@ rather than copying it if it's not one of the basic immutable types.
 > appears after.
 > `find` has one [parameter]({{ page.root }}/reference/#parameter): the sub-string to look 
 > for in the string
-> This is sent to the code referened by the `find` name (the **function**) and after this code
+> This is sent to the code referenced by the `find` name (the **function**) and after this code
 > is run, it return the index of the sub-string (if found) and then continues. You can also have
 > functions that don't need any input, for example `my_str.split()`.
 {: .callout}
