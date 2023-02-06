@@ -366,6 +366,7 @@ readable code!
 >
 > def f2k(f):
 >   k = ((f-32)*(5.0/9.0)) + 273.15
+>   print(k)
 >   return k
 >
 > f2k(8)
