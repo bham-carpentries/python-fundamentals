@@ -419,7 +419,7 @@ often reveals common reasons why you might get that error.
 >
 > 1.  How many levels does the traceback have?
 > 2.  What is the function name where the error occurred?
-> 3.  On which line number in this function did the error occurr?
+> 3.  On which line number in this function did the error occur?
 > 4.  What is the type of error?
 > 5.  What is the error message?
 >

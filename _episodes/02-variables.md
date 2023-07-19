@@ -38,7 +38,7 @@ This is great but not very interesting.
 To do anything useful with data, we need to assign its value to a _variable_ otherwise
 we'd have to write the whole analysis as one long calculation.
 
-But what is a variable? And what is it's relation to how Python organises the information you
+But what is a variable? And what is its relation to how Python organises the information you
 give it? This is all covered by four terms:
 
 * Types – How to interpret data in a memory location ('object') and what operations can be performed by it
@@ -134,7 +134,7 @@ weight_kg_text = "weight in kilograms:"
 > ## Single or Double quotes
 >
 > To indicate a string, you need to enclose it in matching single or double quotes. Python will accept both
-> but it's generally a good idea to use double quotes as if you tried to assign a string with an apostrope
+> but it's generally a good idea to use double quotes as if you tried to assign a string with an apostrophe
 > in it using single quotes, you will get an error. Give this a try:
 >
 > ~~~
@@ -142,7 +142,7 @@ weight_kg_text = "weight in kilograms:"
 > ~~~
 > {: .language-python}
 >
-> As you are much more likely to have apostrope's in a string than double quotes, it's best to stick with
+> As you are much more likely to have apostrophe's in a string than double quotes, it's best to stick with
 > double quotes for strings.
 {: .callout}
 

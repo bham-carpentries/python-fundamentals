@@ -12,9 +12,9 @@ keypoints:
 - "Python is a general purpose programming language that allows you to get a computer to do almost anything"
 - "Generally, Python implementations are **interpreted** rather than **compiled**"
 - "It is particularly useful at analysing data"
-- "The ipython interpreter can use tab completion and keeps a history of the commands you run"
+- "The IPython interpreter can use tab completion and keeps a history of the commands you run"
 - "In Jupyter, you write your Python code in 'cells' which you can then run to see the output"
-- "Use `Ctrl-D` to exist an IPython session"
+- "Use `Ctrl-D` to exit an IPython session"
 - "Python code is case sensitive"
 ---
 
@@ -24,7 +24,7 @@ to solve a particular problem or group of problems (like R or Matlab) but **any*
 can think of to solve on a computer. Consequently, you can use Python to do almost anything from 
 analyze data to running computer systems to creating games.
 
-Though comprised of fairly basic syntax (i.e. the grammer of the commands you give it) it is incredibly
+Though comprised of fairly basic syntax (i.e. the grammar of the commands you give it) it is incredibly
 powerful. It is relatively easy to pick up as well and thanks to a very large and growing
 set of external modules (or blocks of code) written by other programmers, you can do complicated things
 quickly and easily.
@@ -45,7 +45,7 @@ never notice a problem!
 > ![Initial Jupyter Notebook](
 {{ page.root }}{% link fig/jupyter-start-up.png %})
 > 
-> A jupyter notebook is built up of 'cells' - one is created by default to start with. These
+> A Jupyter notebook is built up of 'cells' - one is created by default to start with. These
 > cells are where you write code (indicated by the `In` prompt) or Markdown text if the cell
 > type is changed using the dropdown on the menu bar (currently 'code' is selected).
 > 
@@ -63,7 +63,7 @@ never notice a problem!
 > enter, it will be run straight away.
 >
 > Python is run just like any other program from a shell prompt - by typing it's name.
-> If you haven't already, you can start up the intrepreter by typing the following:
+> If you haven't already, you can start up the interpreter by typing the following:
 >
 > ~~~
 > $ ipython
@@ -125,7 +125,7 @@ So what did we just do? We typed in a python statement that was interpreted by P
 on when we pressed enter or ran the cell. It interpreted this as 'call the function `print` with the argument
 `"Hello World"`. It went away, ran the appropriate code and returned.
 
-But what does the `print` function do? In this case, it's fairly self-expanatory but if you wanted
+But what does the `print` function do? In this case, it's fairly self-explanatory but if you wanted
 to know more you can use the `help` function:
 
 ~~~

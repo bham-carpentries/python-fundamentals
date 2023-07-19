@@ -23,7 +23,7 @@ use within your own code.
 ## Importing an External Module
 
 Importing a module is like getting a piece of lab equipment out of a storage locker and setting it
-up on the bench. Moduels provide additional functionality to the basic Python package, much like
+up on the bench. Modules provide additional functionality to the basic Python package, much like
 a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too
 many libraries can sometimes complicate and slow down your programs - so we only import what we
 need for each program.
